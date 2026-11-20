@@ -1,0 +1,22 @@
+[database]
+type = 'sqllite'
+# host = '127.0.0.1'
+# port = 3306
+# user = 'root'
+# password = 'root'
+dbPath = "db/Database.db"
+database = 'main'
+prefix = 'gvaf_'
+
+[jwt]
+secret = 'zYn2Kk0ouZ0qYh*J68@msM!AHs^()@A@OAK!3+_a2c5v5kt8^hsR'
+refreshSecret = 'o330uf3u33jdhffryr7'
+expiresAt = '15' # token有效期: 分钟
+refreshExpiresAt = '1' # refresh_token有效期: 天
+issuer = 'server'
+
+[redis]
+host = '127.0.0.1'
+port = '6379'
+password = ''
+db = 1

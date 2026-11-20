@@ -1,0 +1,25 @@
+package routes
+
+import (
+	"gin-spa-app-framework-back/internal/controllers"
+
+	"github.com/gin-gonic/gin"
+)
+
+type ExampleRouter struct {
+}
+
+var exampleController *controllers.ExampleController = new(controllers.ExampleController)
+
+func (e *ExampleRouter) InitRouter(PublicRouter *gin.RouterGroup, PrivateRouter *gin.RouterGroup) {
+	authRouter := PrivateRouter.Group("example")
+	exampleGroup := PublicRouter.Group("example")
+	{
+		exampleGroup.GET("/", exampleController.IndexAction)
+		exampleGroup.GET("/test_session", exampleController.TestSessionAction)
+	}
+	{
+		authRouter.GET("/index", exampleController.IndexAction)
+	}
+
+}
